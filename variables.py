@@ -38,8 +38,26 @@ print("ad" * 3)
 
 
 # Задание 3
-name = input("Введите имя: ")
-age = int(input("Введите возраст: "))
-height = float(input("Введите рост (см): "))
+# name = input("Введите имя: ")
+# age = int(input("Введите возраст: "))
+# height = float(input("Введите рост (см): "))
+#
+# print(f"Привет, меня зовут {name}. Мне {age} лет. Рост {height} см. Через 10 лет мне будет {age + 10}")
 
-print(f"Привет, меня зовут {name}. Мне {age} лет. Рост {height} см. Через 10 лет тебе будет {age + 10}")
+# Задание 4
+user_age = int(input("Введите ваш возраст: "))
+
+if user_age > 0 and user_age < 150:
+
+    print("Возраcт введен корректно")
+
+    if user_age < 18:
+        print("Ты несовершеннолетний")
+    elif 18 <= user_age <= 65:
+        print("Ты взрослый")
+    else:
+        print("Ты пенсионер")
+
+else:
+    print("Проверьте введенные данные")
+
