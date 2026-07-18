@@ -18,23 +18,23 @@
 # print(type(is_alive))
 
 
-print(0.1 + 0.2)
+# print(0.1 + 0.2)
 
 
 # Задание 2 "операции"
 # print(f"Меня зовут {name}. Мне {age} лет. Мой рост {height} см.")
 
-print(10 + 5)
-print(10 - 5)
-print(10 * 5)
-print(10 / 5)
-print(10 // 5)
-print(10 % 5)
-print(10 ** 5)
-print(10 % 3)
-print(10 % 1)
-
-print("ad" * 3)
+# print(10 + 5)
+# print(10 - 5)
+# print(10 * 5)
+# print(10 / 5)
+# print(10 // 5)
+# print(10 % 5)
+# print(10 ** 5)
+# print(10 % 3)
+# print(10 % 1)
+#
+# print("ad" * 3)
 
 
 # Задание 3 "f-строки, input"
@@ -86,4 +86,61 @@ print("ad" * 3)
 
 
 # Задания посложнее № 1 "Стороны треугольника"
+
+# side_one = float(input("Введите длинну первой стороны треугольника: ")) # 5
+# side_two = float(input("Введите длинну второй стороны треугольника: ")) # 5
+# side_three = float(input("Введите длинну третьей стороны треугольника: ")) # 7
+#
+# if side_two + side_three > side_one and side_one + side_three > side_two and side_one + side_two > side_three:
+#
+#     if side_three == side_two == side_one:
+#         print("Треугольник равносторонний")
+#
+#     elif side_one == side_two or side_three == side_one or side_three == side_two:
+#         print("Треугольник равнобедренный")
+#
+#     else:
+#         print("Треугольник разносторонний")
+#
+# else:
+#     print("Треугольника не существует")
+
+
+# Задания посложнее № 2 "Калькулятор с проверкой"
+
+# number_one = float(input("Введите первое число: "))
+# number_two = float(input("Введите второе число: "))
+# sign = input("Введите знак операции: ")
+#
+# if sign in ["+", "-", "*", "/"]:
+#
+#         if sign == "+":
+#             print(number_one + number_two)
+#
+#         elif sign == "-":
+#             print(number_one - number_two)
+#
+#         elif sign == "*":
+#             print(number_one * number_two)
+#
+#         else:
+#             if number_two == 0:
+#                 print("На ноль делить нельзя")
+#
+#             else:
+#                 print(number_one / number_two)
+#
+# else:
+#     print("Неизвестная операция")
+
+
+# Задания посложнее № 3 "Таблица умножения"
+
+
+for i in range(1,6):
+    row = ""
+    for j in range(1,6):
+        row = row + str(i * j) + " "
+    print(row)
+
 
