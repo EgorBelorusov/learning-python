@@ -135,12 +135,52 @@
 
 
 # Задания посложнее № 3 "Таблица умножения"
+# for i in range(1,6):
+#     row = ""
+#     for j in range(1,6):
+#         row = row + str(i * j) + " "
+#     print(row)
 
 
-for i in range(1,6):
-    row = ""
-    for j in range(1,6):
-        row = row + str(i * j) + " "
-    print(row)
+# Задания посложнее № 4 "Поиск простого числа"
+# Вариант решения № 1
+number = int(input("Введите число: "))
+is_prime = True
+
+if number > 1:
+
+    for i in range(2, number):
+
+        if number % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print("Число простое.")
+    else:
+        print("Число не простое.")
+
+else:
+    print("Числа 0, 1 и отрицательные не являются простыми.")
 
 
+# Вариант решения № 2
+# number = int(input("Введите число: "))
+# list = []
+#
+# if 0 < number > 1:
+#
+#     for i in range(2, number):
+#
+#         if number % i == 0:
+#             list.append(i)
+#             break
+#
+#
+#     if list:
+#         print("Число простое.")
+#     else:
+#         print("Число не простое.")
+#
+# else:
+#     print("Числа 0, 1 и отрицательные не являются простыми.")
