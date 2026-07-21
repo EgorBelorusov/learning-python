@@ -144,24 +144,24 @@
 
 # Задания посложнее № 4 "Поиск простого числа"
 # Вариант решения № 1
-number = int(input("Введите число: "))
-is_prime = True
-
-if number > 1:
-
-    for i in range(2, number):
-
-        if number % i == 0:
-            is_prime = False
-            break
-
-    if is_prime:
-        print("Число простое.")
-    else:
-        print("Число не простое.")
-
-else:
-    print("Числа 0, 1 и отрицательные не являются простыми.")
+# number = int(input("Введите число: "))
+# is_prime = True
+#
+# if number > 1:
+#
+#     for i in range(2, number):
+#
+#         if number % i == 0:
+#             is_prime = False
+#             break
+#
+#     if is_prime:
+#         print("Число простое.")
+#     else:
+#         print("Число не простое.")
+#
+# else:
+#     print("Числа 0, 1 и отрицательные не являются простыми.")
 
 
 # Вариант решения № 2
@@ -184,3 +184,22 @@ else:
 #
 # else:
 #     print("Числа 0, 1 и отрицательные не являются простыми.")
+
+
+
+
+# # Усложненные задачи № 5 "FizzBuzz"
+# for i in range(1, 31):
+#     if i % 3 == 0 and i % 5 == 0:
+#         print(f"{i} - FizzBuzz")
+#
+#     elif i % 3 == 0:
+#         print(f"{i} - Fizz")
+#
+#     elif i % 5 == 0:
+#         print(f"{i} - Buzz")
+#
+#     else:
+#         print(i)
+
+
