@@ -65,8 +65,8 @@ print(products)
 products.pop(1)
 print(products)
 
-a = products.sort()
-print(a)
+products.sort()
+print(products)
 
 b = sorted(products)
 print(b)
@@ -79,7 +79,7 @@ t = toys
 
 t.append("Кукла")
 print(t)
-print(toys)
+print(toys[1])
 
 
 numbers = [1, 2, 3, 4, 5]
