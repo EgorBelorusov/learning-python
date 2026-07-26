@@ -51,22 +51,22 @@ print(num)
 
 
 # Задание 1
-nums = (1, 2)
-x, y = nums
-print(x, y)
-
-
-double_list = [1, 2, 2, 3, 4, 4, 4, 5]
-double_list = set(double_list)
-print(double_list)
-
-
-elements_one = {"груша", "яблоко", "апельсин", "персики"}
-elements_two = {"груша", "виноград", "арбуз", "персики"}
-
-print(elements_one | elements_two)
-print(elements_one & elements_two)
-print(elements_one - elements_two)
+# nums = (1, 2)
+# x, y = nums
+# print(x, y)
+#
+#
+# double_list = [1, 2, 2, 3, 4, 4, 4, 5]
+# double_list = set(double_list)
+# print(double_list)
+#
+#
+# elements_one = {"груша", "яблоко", "апельсин", "персики"}
+# elements_two = {"груша", "виноград", "арбуз", "персики"}
+#
+# print(elements_one | elements_two)
+# print(elements_one & elements_two)
+# print(elements_one - elements_two)
 
 
 

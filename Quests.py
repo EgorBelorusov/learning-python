@@ -57,26 +57,30 @@
 
 
 # Задача 3.1 — Подсчёт частоты букв
-word_user = input("Введите слово: ").strip().lower()
-word_dict = {}
-
-for i in word_user:
-    if i in word_dict:
-        word_dict[i] += 1
-
-    else:
-        word_dict[i] = 1
-
-
-print(word_dict)
-
-
+# word_user = input("Введите слово: ").strip().lower()
+# word_dict = {}
+#
+# for i in word_user:
+#     if i in word_dict:
+#         word_dict[i] += 1
+#
+#     else:
+#         word_dict[i] = 1
+#
+#
+# print(word_dict)
 
 
 
 
-
-
+# Задача 4.1 — Общие элементы
+# goods_one = ["виноград", "яблоки", "сливы", "апельсины"]
+# goods_two = ["черешня", "яблоки", "персики", "апельсины"]
+#
+# for i in goods_one:
+#     for j in goods_two:
+#         if i == j:
+#             print(i)
 
 
 
