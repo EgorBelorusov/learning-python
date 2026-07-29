@@ -97,45 +97,100 @@ from unittest import result
 
 # Задание 1
 
-def find_max(*args):
-    number = float("-inf")
-    for num in args:
-        if num > number:
-            number = num
-
-    return number
-
-print(find_max(1,2,3,4,5,6,7,8,9,100))
-
-
-
-# Задание 2
-
-def print_profile(**kwargs):
-    for key, value in kwargs.items():
-        print(f"{key}: {value}")
-
-print_profile(name="Марк", age=30, city="Москва")
-
-
-
-
-
-# Задание 3
-
+# def find_max(*args):
+#     number = float("-inf")
+#     for num in args:
+#         if num > number:
+#             number = num
+#
+#     return number
+#
+# print(find_max(1,2,3,4,5,6,7,8,9,100))
+#
+#
+#
+# # Задание 2
+#
+# def print_profile(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+#
+# print_profile(name="Марк", age=30, city="Москва")
+#
+#
+#
+#
+#
+# # Задание 3
+#
+# # count = 1
+# #
+# # def func(num):
+# #     count = count + num
+# #     return count
+# #
+# # print(func(10))
+#
+#
+#
+#
+# def func(count):
+#     return count + 1
+#
 # count = 1
-#
-# def func(num):
-#     count = count + num
-#     return count
-#
-# print(func(10))
+# print(func(2))
+
+
+
+# ========================================================================
+# Усложненное задание 1
+def divide(a, b):
+    if b == 0:
+        return "На 0 делить невозможно."
+
+    else:
+        return a / b
+
+print(divide(10, 0))
+print(divide(10, 5))
+# ========================================================================
 
 
 
 
-def func(count):
-    return count + 1
 
-count = 1
-print(func(2))
+# ========================================================================
+# Усложненное задание 2
+numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 100, -2, -20]
+
+def is_even(number):
+    return number % 2 == 0
+
+
+def filter_even(numbers):
+    numbers_even = []
+
+    for num in numbers:
+        if is_even(num):
+            numbers_even.append(num)
+
+    return numbers_even
+
+print(filter_even(numbers_list))
+# ========================================================================
+
+
+
+
+# ========================================================================
+# # Усложненное задание 3
+def factorial(n):
+    if n <= 1:
+        return 1
+
+    else:
+        return n * factorial(n-1)
+
+print(factorial(0))
+
+# ========================================================================
