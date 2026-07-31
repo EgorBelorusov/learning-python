@@ -29,8 +29,8 @@ with open("data.txt", "r") as file:
 
 
 # Способы записи
-with open("data.txt", "w") as file:
-    file.write("Привет, файл!\n")
+# with open("data.txt", "w") as file:
+#     file.write("Привет, файл!\n")
 
 
 # .write() пишет строку в файл (важно: .write() не добавляет перенос строки автоматически,
@@ -91,6 +91,70 @@ with open("notes.txt", "r") as file:
 
 
 
+
+
+# ======================================================================
+# Усложненное задание 1 "Подсчёт строк и слов в файле"
+with open("notes.txt", "r") as file:
+    lines_storage = 0
+    words_storage = 0
+
+    for line in file.readlines():
+        lines_storage += 1
+        words_storage += len(line.split())
+
+
+print(f"В файле {lines_storage} строк(-и) и {words_storage} слов(-а).")
+
+
+
+# ======================================================================
+
+
+
+
+
+# ======================================================================
+# Усложненное задание 2 "Фильтрация строк файла"
+with open("data.txt", "r") as file:
+
+    for line in file.readlines():
+        if "ошибка" in line.lower():
+            print(line)
+
+# ======================================================================
+
+
+
+
+# Усложненное задание 3 "Запись результатов работы функции в файл"
+
+def is_even(number):
+    return number % 2 == 0
+
+
+def write_numbers_to_file(numbers_even):
+    with open("even_numbers.txt", "w") as file:
+        for num in numbers_even:
+            file.write(f"{str(num)}\n")
+
+
+
+def filter_even(numbers):
+    numbers_list = []
+
+    for num in numbers:
+        if is_even(num):
+            numbers_list.append(num)
+
+    return numbers_list
+
+even_list = filter_even([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 50, 100, 99])
+write_numbers_to_file(even_list)
+print(even_list)
+
+
+# ======================================================================
 
 
 
