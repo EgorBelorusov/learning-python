@@ -1,5 +1,7 @@
 # Мини-проект "Угадай число"
 from random import randint
+from unittest import result
+
 
 # def guess_number_game():
 #     number_randint = randint(1, 100)
@@ -42,34 +44,86 @@ from random import randint
 
 # ================================================================
 # Мини-проект "Генератор пароля"
-import string
-from random import choice
-
-def generate_password(length):
-    set_chars = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
-    password_storage = ""
-
-    for i in range(length):
-        char = choice(set_chars)
-        password_storage += char
-
-    return password_storage
-
-
-
-try:
-    user_input = int(input("Введите длину пароля: "))
-    print(generate_password(user_input))
-
-except ValueError:
-    print("Ошибка! Введите число.")
-
-
+# import string
+# from random import choice
+#
+# def generate_password(length):
+#     set_chars = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+#     password_storage = ""
+#
+#     for i in range(length):
+#         char = choice(set_chars)
+#         password_storage += char
+#
+#     return password_storage
+#
+#
+#
+# try:
+#     user_input = int(input("Введите длину пароля: "))
+#     print(generate_password(user_input))
+#
+# except ValueError:
+#     print("Ошибка! Введите число.")
 
 
 
 
 
+# ================================================================
+# Мини-проект "Калькулятор"
+def calculator(number_one, sign, number_two):
+
+    try:
+        if sign in ["+", "-", "*", "/"]:
+
+            if sign == "+":
+                result = number_one + number_two
+                return result
+
+            elif sign == "-":
+                result = number_one - number_two
+                return result
+
+            elif sign == "*":
+                result = number_one * number_two
+                return result
+
+            else:
+                result = number_one / number_two
+                return result
+
+        else:
+            return "Неверная операция!"
+
+    except ZeroDivisionError:
+        return "Делить на 0 невозможно."
+
+
+
+
+
+
+
+
+while True:
+
+        try:
+            number_first = int(input("Введите первое число: "))
+            operation = input("Введите знак: ")
+            number_second = int(input("Введите второе число: "))
+
+            print(calculator(number_first, operation, number_second))
+
+
+            users_input = input("Хотите продолжить? Введите 'q' для выхода или любую клавишу для продолжения: ")
+
+            if users_input.lower() == 'q':
+                break
+
+
+        except ValueError:
+            print("Ошибка! Введите число.")
 
 
 
