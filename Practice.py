@@ -3,6 +3,7 @@ from random import randint
 from unittest import result
 
 
+
 # def guess_number_game():
 #     number_randint = randint(1, 100)
 #     attempts_count = 0
@@ -72,59 +73,160 @@ from unittest import result
 
 # ================================================================
 # Мини-проект "Калькулятор"
-def calculator(number_one, sign, number_two):
+# def calculated(number_one, sign, number_two):
+#
+#     try:
+#         if sign in ["+", "-", "*", "/"]:
+#
+#             if sign == "+":
+#                 result = number_one + number_two
+#                 return result
+#
+#             elif sign == "-":
+#                 result = number_one - number_two
+#                 return result
+#
+#             elif sign == "*":
+#                 result = number_one * number_two
+#                 return result
+#
+#             else:
+#                 result = number_one / number_two
+#                 return result
+#
+#         else:
+#             return "Неверная операция!"
+#
+#     except ZeroDivisionError:
+#         return "Делить на 0 невозможно."
+#
+#
+#
+#
+#
+#
+#
+# def run_calculate():
+#     while True:
+#
+#             try:
+#                 number_first = int(input("Введите первое число: ").strip())
+#                 operation = input("Введите знак: ").strip()
+#                 number_second = int(input("Введите второе число: ").strip())
+#
+#                 print(calculated(number_first, operation, number_second))
+#
+#
+#                 users_input = input("Хотите продолжить? Введите 'q' для выхода или любую клавишу для продолжения: ")
+#
+#                 if users_input.lower() == 'q':
+#                     break
+#
+#
+#             except ValueError:
+#                 print("Ошибка! Введите число.")
+#
+#
+#
+#
+# run_calculate()
+
+
+
+
+
+# ================================================================
+# Мини-проект "To-do лист"
+
+def load_tasks():
+    with open("todo.txt", "r", encoding="utf-8") as file:
+
+        tasks = file.readlines()
+
+        return tasks
+
+
+
+
+
+def show_tasks(tasks):
+    print("Список задач:")
+    for item, task in enumerate(tasks):
+
+        print(f"{item + 1}. {task}")
+
+    return "Список задач выведен!"
+
+
+
+
+
+def add_task(tasks):
+    input_task = input("Введите новую задачу: ").strip()
+
+    tasks.append(input_task + "\n")
+
+    with open("todo.txt", "w", encoding="utf-8") as file:
+
+        file.writelines(tasks)
+
+        return "Задача успешно добавлена!"
+
+
+
+
+
+def remove_task(tasks):
+
+    if not tasks:
+        return "Ошибка! Список задач пуст, удалять нечего."
 
     try:
-        if sign in ["+", "-", "*", "/"]:
+        del_index = int(input("Введите номер задачи для удаления: ").strip())
 
-            if sign == "+":
-                result = number_one + number_two
-                return result
+        if del_index < 1 or del_index > len(tasks):
+            return "Ошибка! Задачи с таким номером не существует."
 
-            elif sign == "-":
-                result = number_one - number_two
-                return result
+        tasks.pop(del_index - 1)
 
-            elif sign == "*":
-                result = number_one * number_two
-                return result
+        with open("todo.txt", "w", encoding="utf-8") as file:
+            file.writelines(tasks)
 
-            else:
-                result = number_one / number_two
-                return result
+        return "Задача успешно удалена!"
 
-        else:
-            return "Неверная операция!"
-
-    except ZeroDivisionError:
-        return "Делить на 0 невозможно."
+    except ValueError:
+        return "Ошибка! Введите корректное число (номер задачи)."
 
 
 
-
-
-
-
+tasks = load_tasks()
 
 while True:
 
-        try:
-            number_first = int(input("Введите первое число: "))
-            operation = input("Введите знак: ")
-            number_second = int(input("Введите второе число: "))
+    print("\n ========== Список задач ========== \n")
+    print("1 - Показать задачи")
+    print("2 - Добавить задачу")
+    print("3 - Удалить задачу")
+    print("4 - Выйти")
 
-            print(calculator(number_first, operation, number_second))
+    try:
+        user_input = int(input("Введите номер команды: ").strip())
 
+        if user_input == 1:
+            tasks = load_tasks()
+            print(show_tasks(tasks))
 
-            users_input = input("Хотите продолжить? Введите 'q' для выхода или любую клавишу для продолжения: ")
+        elif user_input == 2:
+            print(add_task(tasks))
 
-            if users_input.lower() == 'q':
-                break
+        elif user_input == 3:
+            print(remove_task(tasks))
 
+        else:
+            break
 
-        except ValueError:
-            print("Ошибка! Введите число.")
-
+    except ValueError:
+        print("Ошибка! Введите верный номер команды")
 
 
 
