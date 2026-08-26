@@ -1,5 +1,5 @@
 # Этап 2. ООП, классы, объекты, атрибуты, методы
-from symtable import Class
+
 
 # class Dog: # объявление класса
 #     def __init__(self, name, age):  # конструктор
@@ -377,35 +377,35 @@ from unittest import result
 
 
 # Задание 1
-time_now = datetime.now()
-
-print(time_now)
-print(time_now.strftime("%d.%m.%Y.%H:%M"))
-
-
-# Задание 2
-today = datetime.now()
-new_year = datetime(today.year, 12, 31)
-
-difference = new_year - today
-
-print(difference.days)
-
-
-
-# Задание 3
-text = "Мне 25 лет, у меня 3 кота и 100 рублей"
-
-result = re.findall(r"\d+", text)
-
-print(result)
-
-
-# Задание 4
-email = "user@mail.com"
-
-if re.match(r"^\w+@\w+\.\w+$", email):
-    print("Похоже на email")
+# time_now = datetime.now()
+#
+# print(time_now)
+# print(time_now.strftime("%d.%m.%Y.%H:%M"))
+#
+#
+# # Задание 2
+# today = datetime.now()
+# new_year = datetime(today.year, 12, 31)
+#
+# difference = new_year - today
+#
+# print(difference.days)
+#
+#
+#
+# # Задание 3
+# text = "Мне 25 лет, у меня 3 кота и 100 рублей"
+#
+# result = re.findall(r"\d+", text)
+#
+# print(result)
+#
+#
+# # Задание 4
+# email = "user@mail.com"
+#
+# if re.match(r"^\w+@\w+\.\w+$", email):
+#     print("Похоже на email")
 
 
 
