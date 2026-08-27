@@ -198,9 +198,15 @@ class TaskList:
 
     def load_tasks(self):
         with open(self.filename, "r", encoding="utf-8") as file:
-            self.tasks = file.readlines()
+            lines = file.readlines()
 
-            return self.tasks
+        self.tasks = []
+        for line in lines:
+            clean_text = line.strip()
+            task = Task(clean_text)
+            self.tasks.append(task)
+
+        return self.tasks
 
 
     def show_tasks(self):
@@ -214,12 +220,13 @@ class TaskList:
 
 
     def add_task(self, text):
-        full_text = text + '\n'
+        full_text = text
         task = Task(full_text)
         self.tasks.append(task)
 
-        with open(self.filename, "a", encoding="utf-8") as file:
-            file.writelines(task.text)
+        with open(self.filename, "w", encoding="utf-8") as file:
+            for obj in self.tasks:
+                file.write(obj.text + '\n')
 
         return "Задача добавлена"
 
@@ -237,9 +244,11 @@ class TaskList:
             self.tasks.pop(del_index - 1)
 
             with open(self.filename, "w", encoding="utf-8") as file:
-                file.writelines(self.tasks)
+                for obj in self.tasks:
+                    file.write(obj.text + "\n")
 
             return "Задача успешно удалена!"
+
 
         except ValueError:
             return "Ошибка! Введите корректное число (номер задачи)."
